@@ -1,0 +1,15 @@
+name: opt-learn
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - scipy
+  - matplotlib
+  - numpy
+  - ipykernel
+  - ipywidgets
+  - ipympl
+  - cvxpy
+  - ecos
+prefix: /home/jacob/miniconda3/envs/opt-learn

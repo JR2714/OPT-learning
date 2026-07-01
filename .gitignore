@@ -1,0 +1,15 @@
+# Python 编译缓存（只忽略构建产物，不忽略源代码和笔记）
+__pycache__/
+*.pyc
+*.pyo
+
+# Jupyter 自动存档
+.ipynb_checkpoints/
+
+# 虚拟环境
+venv/
+.venv/
+textBook.*
+
+# VSCode 设置
+.vscode/settings.json
