@@ -1,4 +1,4 @@
-# Deepseek 
+# 该交互画布部分由 DeepSeek 辅助生成
 
 import numpy as np
 import matplotlib.pyplot as plt
