@@ -394,5 +394,76 @@ g(x)=f(x)-\frac{m}{2}\lVert x\rVert^2
 $$
 为凸函数，则称 $f(x)$ 为强凸函数，其中 $m$ 为强凸参数，也称$f(x)$ 为 $m-$ 强凸函数。
 
+这与下面的定义等价：
 
+存在常数 $m>0$ 使得对任意的 $x,y\in \mathbf{dom}f$ 以及 $\theta\in (0,1)$ 有
+$$
+f(\theta x+(1-\theta)y)\leq \theta f(x)+(1-\theta)f(y)-\frac{m}{2}\theta (1-\theta)\lVert x-y\rVert^2,
+$$
 
+**Prop 2.3** 设 $f$ 为强凸函数且**存在最小值**，则 $f$ 的最小值点唯一。
+
+### 2.5.2 凸函数判定定理
+
+**Th 2.8** $f(x)$ 是凸函数 $\iff$ 对任意 $x\in\mathbf{dom}f,\,v\in\mathbb{R}^n,\,g:\mathbb{R}\to\mathbb{R}$ 满足
+$$
+g(t)=f(x+t\nu),\quad \mathbf{dom}g=\{t|x+t\nu\in\mathbf{dom}f\}
+$$
+是凸函数。
+
+对于可微函数，还可以通过导数信息判断凸性。
+
+**Th 2.9 （一阶条件）** 定义在凸集上的可微函数 $f$ ，其是凸函数当且仅当
+$$
+f(y)\geq f(x)+\nabla f(x)^T(y-x),\quad x,y\in\mathbf{dom} f. 
+$$
+> 注：这实际上描述了曲线（面）在切线（面）上方。
+> 利用这一点可以得到函数的全局下界。
+
+**Th 2.10（梯度单调性）** $f$ 可微，则 $f$ 为凸函数当且仅当 $\mathbf{dom}f$ 为凸集且 $\nabla f$ 为单调映射，即
+$$
+(\nabla f(x)-\nabla f(y))^T(x-y)\geq 0,\quad \forall x,y\in\mathbf{dom}f. 
+$$
+
+**Co 2.2** $f$ 可微， $\mathbf{dom}f$ 为凸集，则
+
+(1) $f$ 严格凸当且仅当
+$$
+(\nabla f(x)-\nabla f(y))^T(x-y)>0,\quad x,y\in\mathbf{dom}f;
+$$
+
+(2) $f$ 为 m-强凸函数当且仅当
+$$
+(\nabla f(x)-\nabla f(y))^T(x-y)\geq m\lVert x-y \rVert^2,\quad x,y\in\mathbf{dom}f. 
+$$
+
+若函数二阶可微，则有
+
+**Th 2.11**（二阶条件）设 $f$ 为定义在凸集上的二阶连续可微函数，则 $f$ 为凸函数当且仅当
+$$
+\nabla^2 f(x)\succeq 0 ,\quad \forall x\in\mathbf{dom}f. 
+$$
+若 $\nabla^2 f(x)\succ 0$ ，则称函数严格凸。
+
+还可以使用上方图来判定凸性
+**Th 2.12** 函数 $f(x)$ 为凸函数当且仅当其上方图 $\mathbf{epi} f$ 为凸集。
+
+**Proof:**
+
+必要性：
+
+$\quad$ $\forall x,y\in\mathbb{R}^n,\,a,b\in\mathbb{R}\quad s.t.\quad f(x)\leq a,\,f(y)\leq b$ ，考虑 $\forall t\in(0,1)$ ，有
+$$
+f(tx+(1-t)y)\leq tf(x)+(1-t)f(y)\leq ta+(1-t)b
+$$
+故 $(tx+(1-t)y, ta+(1-t)b)\in\mathbf{epi}f$ ，从而 $f$ 的上方图为凸集。
+
+充分性：
+
+$\quad$ $\forall x,y\in\mathbf{dom}f$ ，$(x,f(x)),\,(y,f(y))\in\mathbf{epi}f$ ，则 $\forall t\in [0,1]$ ，有
+$$
+f(tx+(1-t)y)\leq tf(x)+(1-t)f(y)
+$$
+于是 $f$ 为凸函数。
+
+ 

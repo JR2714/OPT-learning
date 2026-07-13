@@ -26,8 +26,24 @@ $$
 =& \left[\theta y_1+(1-\theta) y_2\right]^TP^{-1}\left[\theta y_1+(1-\theta) y_2\right]\\
 =& \lVert \theta y_1+(1-\theta)y_2 \rVert_{P^{-1}}^2\\
 \leq & (\lVert \theta y_1 \rVert_{P^{-1}}+\lVert (1-\theta)y_2 \rVert_{P^{-1}})^2\\
-=& (\theta + (1-\theta))^2\\
+\leq& (\theta + (1-\theta))^2\\
 =& 1.
 \end{aligned}
 $$
 故 $x\in \mathcal{E}$ ，从而椭球是凸集。
+
+## 0.3
+
+证明：设 $f: \mathbb{R}^n \to \mathbb{R}$ 是凸函数，$A \in \mathbb{R}^{n \times m}$，$b \in \mathbb{R}^n$。用定义 2.16 直接证明 $h(y) = f(Ay + b)$ 是凸函数。
+
+**Proof:**
+
+$\forall x,y\in\mathbb{R}^m,\,t\in[0,1]$ ，
+$$
+\begin{aligned}
+h(tx+(1-t)y)&=f(A(tx+(1-t)y)+b)\\
+&\leq tf(Ax+b)+(1-t)f(Ay+b)\\
+&=th(x)+(1-t)h(y)
+\end{aligned}
+$$
+从而 $h$ 为凸函数。
