@@ -446,6 +446,7 @@ $$
 若 $\nabla^2 f(x)\succ 0$ ，则称函数严格凸。
 
 还可以使用上方图来判定凸性
+
 **Th 2.12** 函数 $f(x)$ 为凸函数当且仅当其上方图 $\mathbf{epi} f$ 为凸集。
 
 **Proof:**
@@ -466,4 +467,63 @@ f(tx+(1-t)y)\leq tf(x)+(1-t)f(y)
 $$
 于是 $f$ 为凸函数。
 
- 
+### 2.5.3 保凸运算
+
+保凸运算也能帮助判断一个函数是否是凸函数
+
+**Th 2.13** 
+
+1. $f$ 为凸函数，则 $\alpha f$ 为凸函数， 其中 $\alpha\geq 0$.
+2. 若 $f_1,\,f_2$ 为凸函数，则 $f_1+f_2$ 为凸函数.
+3. 若 $f$ 为 凸函数，则 $f(Ax+b)$ 为凸函数.
+4. 若 $f_1,f_2,\dots , f_m$ 为凸函数，则 $f(x)=\text{max}\{f_1(x),f_2(x),\dots,f_m(x)\}$ 为凸函数.
+5. 若对每个 $y\in\mathcal{A}$ ， $f(x,y)$ 为关于 $x$ 的凸函数，则
+$$
+g(x)=\sup_{y\in \mathcal{A}}f(x,y)
+$$
+$\qquad$ 是凸函数.
+
+6. 给定函数 $g:\mathbb{R}^n\to\mathbb{R},\,h:\mathbb{R}\to\mathbb{R}$ ，令 $f(x)=h(g(x))$ 。若 $g$ 为凸函数，且 $h$ 为凸函数且单调不减，则 $f$ 是凸函数； $g$ 为凹函数， $h$ 为凸函数且单调不增，则 $f$ 是凸函数。
+7. 给定 $g:\mathbb{R}^n\to\mathbb{R}^k,\,h:\mathbb{R}^k\to\mathbb{R}$，
+$$
+f(x)=h(g(x))=h(g_1(x),g_2(x),\cdots,g_k(x))
+$$
+$\qquad$ 若 $g_i$ 为凸函数，且 $h$ 凸且关于每个变量单调不减，则 $f$ 为凸函数；若 $g_i$ 为凹函数，且 $h$ 凸且关于每个变量单调不增，则 $f$ 为凸函数。
+
+8. 若 $f(x,y)$ 关于 $(x,y)$ 整体式凸函数， $C$ 是凸集，则 
+$$
+g(x)=\inf_{y\in C}f(x,y)
+$$
+$\qquad$ 为凸函数。
+
+9. 函数 $f:\mathbb{R}^n\to\mathbb{R}$ 的**透视函数** $g:\mathbb{R}^n\times\mathbb{R}\to\mathbb{R}$
+$$ 
+g(x,t)=tf(\frac{x}{t}),\,\mathbf{dom}g=\{(x,t)|\frac{x}{t}\in\mathbf{dom}f,t>0\}
+$$
+$\qquad$ 当 $f$ 是凸函数时 $g$ 为凸函数。
+
+### 2.5.4 凸函数的性质
+
+1. 连续性
+
+**Th 2.14** 设 $f:\mathbb{R}^n\to (-\infty,+\infty]$ 为凸函数，对任意 $x_0\in\mathbf{int\,dom}f$ ，$f$ 在 $x_0$ 处连续，其中 $\mathbf{int\,dom}f$ 表示 $f$ 的定义域的内点。
+
+**Co. 2.3** $f$ 为凸函数且 $\mathbf{dom}f$ 为开集，则 $f$ 在 $\mathbf{dom}f$ 上是连续函数。
+
+2. 凸下水平集
+
+**Prop. 2.4** 设 $f(x)$ 为凸函数，则 $f(x)$ 所有 $\alpha$ - 下水平集 $C_{\alpha}$ 为凸集。
+
+3. 二次下界
+
+**LM. 2.2**（二次下界）设 $f$ 为可微 m -强凸函数，则其满足：
+$$
+f(y)\geq f(x)+\nabla f(x)^T(y-x)+\frac{m}{2}\lVert y-x\rVert^2, \, \forall x,y\in \mathbf{dom} f.
+$$
+
+> 注：可微强凸函数的下水平集有界，这是由于对 $\forall x\in S_\alpha$，以及全局最小值点 $x^*$：
+>$$\alpha\geq f(x)\geq f(x^*)+\frac{m}{2}\lVert x-x^*\rVert^2 \\ \lVert x-x^*\rVert \leq \sqrt{\frac{2(\alpha-f(x^*))}{m}}
+
+
+
+

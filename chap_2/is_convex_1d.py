@@ -48,7 +48,8 @@ test_case = [
     ("x ** 2", -5, 5),
     ("x ** 3", -5, 5),
     ("exp(x)", -10, 2),
-    ("sin(x)", 0, np.pi)
+    ("sin(x)", 0, np.pi),
+    ("-exp(-x ** 2)", -1.5, 1.5)
 ]
 
 print(f"{'Expr':<15} {'Interval':<20} {'Convex':<10} {'Violations':<12} {'Max Viol':<20}")
